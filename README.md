@@ -1,6 +1,7 @@
-I created this repository just to illustrate a bug in the JSPM framework.
+I created this to illustrate what I thought was a bug in the JSPM framework. See the solution of the issue at the bottom of this page.
 
-# Install a local NPM repository #
+# Description of the issue #
+### Install a local NPM repository ###
 To test this, you will need to run an NPM server locally. I am suggesting using Sinopia. If you already have a local NPM repository, you can skip these steps.
 
 I'm pretty sure that I would get the same error using the official NPM repository. But I do not want to publish this package into the official NPM repository unnecessarily.
@@ -15,7 +16,7 @@ In a new command prompt:
     npm adduser --registry http://localhost:4873/
     npm set registry http://localhost:4873/
 
-# Publish this package to your local NPM repo #
+### Publish this package to your local NPM repo ###
 
 Get the source code for this package.
 
@@ -26,7 +27,7 @@ Publish it to your local NPM repo.
 
     npm publish
 
-# Consume this package in a new project #
+### Consume this package in a new project ###
 
     cd ..
     mkdir my-test-project
@@ -39,7 +40,18 @@ Publish it to your local NPM repo.
 
     err  Error looking up github:github:systemjs/plugin-css@^0.1.15.
 
-# Additional information #
+# Solution #
+The solution is to add the following to the package.json.
 
-* I'm using jspm version 0.15.7
-* I'm using npm  version 3.2.2
+    {
+    	"jspm": {
+    		"jspmNodeConversion": false
+    	}
+    }
+
+
+References:
+
+- [https://github.com/jspm/jspm-cli/wiki/Publishing-Packages#publishing-jspm-style-packages-to-npm](https://github.com/jspm/jspm-cli/wiki/Publishing-Packages#publishing-jspm-style-packages-to-npm)
+
+- [https://github.com/jspm/jspm-cli/issues/1063](https://github.com/jspm/jspm-cli/issues/1063)

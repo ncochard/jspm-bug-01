@@ -1,6 +1,6 @@
 {
   "name": "jspm-bug-01",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Illustration of a bug found in the JSPM framework",
   "main": "index.js",
   "registry": "npm",
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/ncochard/jspm-bug-01#readme",
   "jspm": {
+    "jspmNodeConversion": false,
+    "format": "es6",
     "main": "index",
     "directories": {},
     "dependencies": {
