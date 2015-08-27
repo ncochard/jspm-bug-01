@@ -1,0 +1,34 @@
+{
+  "name": "jspm-bug-01",
+  "version": "0.0.1",
+  "description": "Illustration of a bug found in the JSPM framework",
+  "main": "index.js",
+  "registry": "npm",
+  "format": "es6",
+  "scripts": {
+    "bundle": "jspm bundle index bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/jspm-bug-01.git"
+  },
+  "author": "Nicolas Cochard",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ncochard/jspm-bug-01/issues"
+  },
+  "homepage": "https://github.com/ncochard/jspm-bug-01#readme",
+  "jspm": {
+    "main": "index",
+    "directories": {},
+    "dependencies": {
+      "clean-css": "^3.4.0",
+      "css": "github:systemjs/plugin-css@^0.1.15"
+    },
+    "devDependencies": {
+      "babel": "babel-core@^5.1.13",
+      "babel-runtime": "^5.1.13",
+      "core-js": "^0.9.4"
+    }
+  }
+}
